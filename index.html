@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps and sets</title>
+</head>
+<style>
+      h3{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: rgb(128, 45, 0);
+            text-shadow: 1px 1px palevioletred;
+        }
+        pre{
+            font-size: 16px;
+            font-family: cursive;
+            display: inline-block;
+            border: 2px solid rgb(33, 84, 205);
+            border-radius: 20px;
+            margin-left: 20px;
+            padding-top: 13px;
+            padding-right: 30px;
+            background:linear-gradient(to right, skyblue,rgb(229, 255, 188),pink,rgb(150, 222, 174));
+           
+        }
+</style>
+<body>
+    <h2 style="text-decoration: underline; color: mediumblue;text-shadow: 1px 1px skyblue;">MAPS AND SETS</h2>
+    <h3>1. Problem: You are given a string (STR) of length N, consisting of only the lower case English alphabet.Your task is to remove all the duplicate occurrences of characters in the string. Input: abcadeecfb Output: abcdef</h3>
+    <pre>
+    let set=new Set();
+    let str="abcadeecfb";
+    for(let i=0;i< str.length;i++){
+        set.add(str[i]);
+    }
+    console.log(set);
+    </pre>
+    <h3>2. Problem: You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps). Input: abcadeecfb Output:
+        a=2
+        b=2
+        c=2
+        d=1
+        e=2
+        f=1
+        
+        </h3>
+        <pre>
+    let map=new Map();
+    let s="abcadeecfb"
+    for(let i=0;i< s.length;i++){
+    if(map.has(s[i])){
+       let value= map.get(s[i]) 
+       map.set(s[i],value+1)
+    }
+    else{
+        map.set(s[i],1)
+    }
+    }
+
+    for(let [k,v] of map){
+    console.log(k+"="+v);
+    }
+        </pre>
+    <script src="script.js"></script>
+</body>
+</html>
